@@ -1,6 +1,23 @@
 set nocompatible		"be iMproved
+set number
 filetype off			"required
-
+syntax on
+set hidden
+set wildmenu
+set hlsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set autoindent
+set nostartofline
+set ruler
+set confirm
+set visualbell
+set tabstop=8
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+let mapleader=","
 
 "set runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,7 +26,8 @@ call vundle#begin()
 "let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 Plugin 'myusuf3/numbers.vim'
-Plugin 'cburroughs/pep8.py'
+"Plugin 'nvie/vim-flake8'
+Plugin 'klen/python-mode'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
@@ -35,6 +53,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set laststatus=2
 
 let $PYTHONPATH='/usr/lib/python3.4/site-packages'
+
+"pymode settings
+let g:pymode=1
 
 "solarized settings
 syntax enable

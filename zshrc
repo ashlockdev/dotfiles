@@ -80,6 +80,10 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmuxr='tmux -f ~/scripts/develop.conf attach'
 
+#virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
+source /usr/lib/python3.4/site-packages/virtualenvwrapper.sh
 
 
 #powerline
