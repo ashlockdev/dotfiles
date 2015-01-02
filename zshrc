@@ -26,6 +26,6 @@ export LANG=en_US.UTF-8
 #virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-source /usr/lib/python3.4/site-packages/virtualenvwrapper.sh
+source /bin/virtualenvwrapper.sh
 
-
+alias tmuxr="tmux -f ~/scripts/develop.conf attach"
