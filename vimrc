@@ -1,64 +1,68 @@
-set nocompatible		"be iMproved
-set number
-filetype off			"required
-syntax on
-set hidden
-set wildmenu
-set hlsearch
-set ignorecase
-set smartcase
-set backspace=indent,eol,start
-set autoindent
-set nostartofline
-set ruler
-set confirm
-set visualbell
-set tabstop=8
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-let mapleader=","
+"Jason Ashlock
 
-"set runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" vundle {{{
+    set nocompatible              " be improved, required
+    filetype off                  " required
 
-"let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-Plugin 'myusuf3/numbers.vim'
-"Plugin 'nvie/vim-flake8'
-Plugin 'klen/python-mode'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+        Plugin 'gmarik/vundle.vim'
+        Plugin 'bling/vim-airline'
+    call vundle#end()
+"}}}
+
+" colors {{{
+    set t_Co=256
+	syntax enable		"enables syntax highlighting 
+	colorscheme molokai	"sets this colorscheme
+	"colorscheme badwolf	"sets this colorscheme
+"}}}
+
+" misc {{{
+"}}}
+
+" spaces & tabs {{{
+	set modelines=1		"allows local files to change local settings
+	set tabstop=4		"4 space tab
+	set softtabstop=4	"4 space tab
+	set expandtab		"use space for tabs			
+	set shiftwidth=4	"auto indent spacing
+	filetype indent on	"indent according to filetype
+	filetype plugin on	"loads plugin by filetype
+	set autoindent		"use same indent as previous line
+"}}}
+
+" ui layout {{{
+	set number		"show line numbers
+	set showcmd		"show commands in bottom bar
+	set nocursorline	"highlight current line
+	set wildmenu		"menu
+	set wildmode=longest:list,full
+    set showmatch       "highlight matching parens
+    set laststatus=2    "always show status line
+"}}}
+
+" searching {{{
+    set ignorecase          " ignore case when searching
+    set incsearch           " search as characters are entered
+    set hlsearch            " highlight all matches
+" }}}
+
+" folding {{{
+" "=== folding ===
+    set foldmethod=indent   " fold based on indent level
+    set foldnestmax=10      " max 10 depth
+    set foldenable          " don't fold files by default on open
+    nnoremap <space> za
+    set foldlevelstart=10    " start with fold level of 1
+" }}}
+
+" Airline {{{
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_powerline_fonts=1
+"}}}
 
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif 
-"always display statusline
-set laststatus=2
-
-let $PYTHONPATH='/usr/lib/python3.4/site-packages'
-
-"pymode settings
-let g:pymode=1
-
-"solarized settings
-syntax enable
-set background=dark
-colorscheme solarized
-
+" vim:foldmethod=marker:foldlevel=0
