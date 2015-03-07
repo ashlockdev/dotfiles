@@ -8,6 +8,10 @@
     call vundle#begin()
         Plugin 'gmarik/vundle.vim'
         Plugin 'bling/vim-airline'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'Valloric/YouCompleteMe'
+        Plugin 'mattn/emmet-vim'
+        
     call vundle#end()
 "}}}
 
@@ -40,6 +44,7 @@
 	set wildmode=longest:list,full
     set showmatch       "highlight matching parens
     set laststatus=2    "always show status line
+    set mouse=a
 "}}}
 
 " searching {{{
@@ -64,5 +69,19 @@
     let g:airline_powerline_fonts=1
 "}}}
 
-
+" Syntastic settings {{{
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+"    let g:syntastic_css_csslint_exec = '/usr/bin/csslint'
+    let g:syntastic_css_checkers = ['csslint']
+    let g:syntastic_html_checkers = ['tidy'] 
+    let g:syntastic_javascript_checkers = ['jshint']
+    let g:syntastic_html_tidy_exec = '/usr/bin/tidy5'
+"}}}
 " vim:foldmethod=marker:foldlevel=0
