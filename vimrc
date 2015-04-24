@@ -11,6 +11,9 @@
         Plugin 'scrooloose/syntastic'
         Plugin 'Valloric/YouCompleteMe'
         Plugin 'mattn/emmet-vim'
+        Plugin 'mustache/vim-mustache-handlebars'
+        Plugin 'cmather/vim-meteor-snippets'
+        Plugin 'scrooloose/nerdtree'
         
     call vundle#end()
 "}}}
@@ -45,6 +48,7 @@
     set showmatch       "highlight matching parens
     set laststatus=2    "always show status line
     set mouse=a
+    autocmd vimenter * NERDTree  "NerdTree opens with vim
 "}}}
 
 " searching {{{
@@ -83,5 +87,6 @@
     let g:syntastic_html_checkers = ['tidy'] 
     let g:syntastic_javascript_checkers = ['jshint']
     let g:syntastic_html_tidy_exec = '/usr/bin/tidy5'
+    let g:mustache_abbreviations = 1
 "}}}
 " vim:foldmethod=marker:foldlevel=0

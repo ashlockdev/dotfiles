@@ -26,6 +26,3 @@ export LANG=en_US.UTF-8
 #virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
-source /bin/virtualenvwrapper.sh
-
-alias tmuxr="tmux -f ~/scripts/develop.conf attach"
