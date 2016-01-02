@@ -24,5 +24,6 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 #virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
+export DISABLE_AUTO_TITLE="true"
+alias tmux="tmux -2"
+alias work="tmux -f ~/dotfiles/scripts/environment.conf attach"

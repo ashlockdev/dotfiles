@@ -1,7 +1,11 @@
 #Jason Ashlock tmux Configuration file
 
+#if run as 'tmux attach' create session if one doesn't exist
+new-session -n $HOST
+
 #enable powerline
-source '/usr/share/tmux/powerline.conf'
+run-shell 'powerline-daemon -q'
+source '/usr/local/lib/python3.4/dist-packages/powerline/bindings/tmux/powerline.conf'
 
 #Set the size panes you want
 setw -g aggressive-resize on

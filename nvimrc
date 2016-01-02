@@ -45,8 +45,8 @@
 
 " spaces & tabs {{{
 	set modelines=1		"allows local files to change local settings
-	set tabstop=2		"4 space tab
-	set softtabstop=2	"4 space tab
+	set tabstop=2		"2 space tab
+	set softtabstop=2	"2 space tab
 	set expandtab		"use space for tabs			
 	set shiftwidth=2	"auto indent spacing
 	filetype indent on	"indent according to filetype
